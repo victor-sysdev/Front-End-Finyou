@@ -23,9 +23,12 @@ body {
 }
 
 
-
-
 /* ===== HEADER ===== */
+.barra-navegacao{
+
+  /* configurar */
+
+}
 /* ===== HEADER FIXO ===== */
 header {
   background-color: var(--branco);
@@ -64,6 +67,7 @@ body {
 nav ul {
   list-style: none;
   display: flex;
+  flex-direction: row;
   gap: 30px;
 }
 
@@ -117,6 +121,7 @@ nav ul li a:hover {
   font-weight: 600;
   text-decoration: none;
   transition: 0.3s ease;
+  border: 1px solid black;
 }
 
 .botao:hover {
@@ -149,6 +154,10 @@ section h2 {
   gap: 25px;
 }
 
+.cards h3{
+  font-weight: 600;
+}
+
 .card {
   background: var(--cinza-claro);
   padding: 25px;
@@ -159,11 +168,18 @@ section h2 {
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border: 1px solid blue;
 }
 
 .destaque {
   background: linear-gradient(135deg, var(--azul-claro), var(--azul-escuro));
   color: var(--branco);
+}
+
+.destaque h3{
+  background: linear-gradient(45deg, #b8860b, #ffcc00, #ffdf00, #b8860b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ===== FORM ===== */
@@ -228,11 +244,13 @@ footer {
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
   header {
+    /* display: none; Quando a tela chegar em determinado tamanho, ela desaparecerá */
     flex-direction: column;
     align-items: center;
   }
 
   nav ul {
+    /* display: none; Quando a tela chegar em determinado tamanho, ela desaparecerá */
     flex-direction: column;
     gap: 15px;
     margin-top: 10px;
