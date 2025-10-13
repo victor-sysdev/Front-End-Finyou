@@ -1,9 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/FinYou/Front-End-Finyou/styles/estilizacao.css" />
+  <link rel="stylesheet" href="{% static 'styles/estilizacao.css' %}" />
 
   <!--Adicionar o Favicon-->
 
@@ -20,11 +22,11 @@
 
     <nav>
       <ul>
-        <li><a href="home.html">Início</a></li>
-        <li><a href="home.html">Sobre</a></li>
-        <li><a href="home.html">Serviços</a></li>
-        <li><a href="home.html">Planos</a></li>
-        <li><a href="home.html">Contato</a></li>
+        <li><a href="{% url 'rota_home' %}">Início</a></li>
+        <li><a href="{% url 'rota_home' %}">Sobre</a></li>
+        <li><a href="{% url 'rota_home' %}">Serviços</a></li>
+        <li><a href="{% url 'rota_home' %}">Planos</a></li>
+        <li><a href="{% url 'rota_home' %}">Contato</a></li>
       </ul>
     </nav>
   </header>
@@ -32,7 +34,7 @@
   <!-- ===== LOGIN CONTEÚDO ===== -->
   <section class="login-section">
     <div class="login-box">
-      <img src="/FinYou/Front-End-Finyou/assets/Logo_Finyou.png" alt="Logo FinYou" class="login-logo" />
+      <img src="{% static 'images/Logo_Finyou.png' %}" alt="Logo FinYou" class="login-logo" />
 
       <h2>Bem-vindo de volta!</h2>
       <p>Entre na sua conta FinYou</p>
@@ -43,17 +45,17 @@
         <button type="submit">Entrar</button>
 
         <div class="login-links">
-        <p>Não tem uma conta? <a href="nova_conta.html">Criar conta</a></p>
-        <p>Esqueceu a senha? <a href="recuperacao.html">Recuperar senha</a></p>
+        <p>Não tem uma conta? <a href="{% url "rota_criarConta" %}">Criar conta</a></p>
+        <p>Esqueceu a senha? <a href="{% url "rota_recuperarSenha" %}">Recuperar senha</a></p>
         </div>
       </form>
 
       <div class="login-social">
         <p>Ou entre com</p>
         <div class="social-icons">
-          <img src="/FinYou/Front-End-Finyou/assets/Logo_Facebok.png" alt="Facebook" />
-          <img src="/FinYou/Front-End-Finyou/assets/Logo_Instagram.png" alt="Instagram" />
-          <img src="/FinYou/Front-End-Finyou/assets/Logo_linkedin.png" alt="LinkedIn" />
+          <img src="{% static "images/Logo_Facebook.png" %}" alt="Facebook" />
+          <img src="{% static "images/Logo_Instagram.png" %}" alt="Instagram" />
+          <img src="{% static "images/Logo_LinkedIn.png" %}" alt="LinkedIn" />
         </div>
       </div>
     </div>

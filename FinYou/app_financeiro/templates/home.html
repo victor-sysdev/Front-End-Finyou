@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FinYou - Seu Futuro Financeiro</title>
-  <link rel="stylesheet" href="{% load static 'styles/estilizacao.css' %}" />
+  <link rel="stylesheet" href="{% static 'styles/estilizacao.css' %}" />
   <link rel="icon" type="image/png" href="/FinYou/Front-End-Finyou/assets/Logo_Finyou.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +24,7 @@
         </div>
         
         <ul>
-          <li><a href="login.html">Login</a></li>
+          <li><a href="{% url "rota_login" %}">Login</a></li>
           <li><a href="#inicio">Início</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#servicos">Serviços</a></li>

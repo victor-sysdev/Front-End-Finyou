@@ -1,9 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/FinYou/Front-End-Finyou/styles/estilizacao.css" />
+  <link rel="stylesheet" href="{% static 'styles/estilizacao.css' %}" />
   <title>Recuperar Senha - FinYou</title>
 </head>
 <body>
@@ -17,11 +19,11 @@
 
     <nav>
       <ul>
-        <li><a href="home.html">Início</a></li>
-        <li><a href="home.html">Sobre</a></li>
-        <li><a href="home.html">Serviços</a></li>
-        <li><a href="home.html">Planos</a></li>
-        <li><a href="home.html">Contato</a></li>
+        <li><a href="{% url 'rota_home' %}">Início</a></li>
+        <li><a href="{% url 'rota_home' %}">Sobre</a></li>
+        <li><a href="{% url 'rota_home' %}">Serviços</a></li>
+        <li><a href="{% url 'rota_home' %}">Planos</a></li>
+        <li><a href="{% url 'rota_home' %}">Contato</a></li>
       </ul>
     </nav>
   </header>
@@ -41,7 +43,7 @@
       </form>
 
       <p class="voltar-login">
-        <a href="login.html">← Voltar para o login</a>
+        <a href="{% static "" %}}">← Voltar para o login</a>
       </p>
     </div>
   </section>
