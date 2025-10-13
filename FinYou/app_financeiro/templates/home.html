@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FinYou - Seu Futuro Financeiro</title>
-  <link rel="stylesheet" href="/FinYou/Front-End-Finyou/styles/estilizacao.css" />
+  <link rel="stylesheet" href="{% load static 'styles/estilizacao.css' %}" />
   <link rel="icon" type="image/png" href="/FinYou/Front-End-Finyou/assets/Logo_Finyou.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,13 +16,10 @@
   
   <!-- ===== HEADER ===== -->
   <header>
-    <nav class="barra-navegacao ">
-        
+    <nav class="barra-navegacao">
       <div class="logo">
-        <a href="">
-          <img src="/FinYou/Front-End-Finyou/assets/Logo_Finyou_Sem_Escrita.png" alt="FinYou Logo" />
+          <img src="../static/images/Logo_Finyou.png" alt="FinYou Logo" />
           <h1>FinYou</h1>
-          </a>
         </div>
         
         <ul>
@@ -116,9 +113,9 @@
   <footer>
     <p>© 2025 FinYou - Todos os direitos reservados.</p>
     <div class="redes-sociais">
-      <img src="ChatGPT Image 7 de out. de 2025, 11_46_27.png" alt="Facebook">
-      <img src="ChatGPT Image 7 de out. de 2025, 11_40_48.png" alt="Instagram">
-      <img src="ChatGPT Image 7 de out. de 2025, 11_40_58.png" alt="LinkedIn">
+      <img src="../static/images/Logo_Facebok.png" alt="Facebook">
+      <img src="../static/images/Logo_Instagram.png" alt="Instagram">
+      <img src="../static/images/Logo_linkedin.png" alt="LinkedIn">
     </div>
   </footer>
 </body>
