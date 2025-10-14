@@ -1,65 +1,36 @@
+{% extends 'template.html' %}
 {% load static %}
+{% block titulo %}Login{% endblock titulo %}
+{% block conteudo %}
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static 'styles/estilizacao.css' %}" />
+<!-- ===== LOGIN CONTEÚDO ===== -->
+<section class="login-section">
+  <div class="login-box">
+    <img src="{% static 'images/Logo_Finyou.png' %}" alt="Logo FinYou" class="login-logo" />
 
-  <!--Adicionar o Favicon-->
+    <h2>Bem-vindo de volta!</h2>
+    <p>Entre na sua conta FinYou</p>
 
-  <title>Login - FinYou</title>
-</head>
-<body>
+    <form class="login-form">
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
 
-  <!-- ===== HEADER FIXO ===== -->
-  <header>
-    <div class="logo">
-      <img src="/FinYou/Front-End-Finyou/assets/Logo_Finyou_Sem_Escrita.png" alt="FinYou Logo" />
-      <h1>FinYou</h1>
-    </div>
+      <div class="login-links">
+      <p>Não tem uma conta? <a href="{% url "rota_criarConta" %}">Criar conta</a></p>
+      <p>Esqueceu a senha? <a href="{% url "rota_recuperarSenha" %}">Recuperar senha</a></p>
+      </div>
+    </form>
 
-    <nav>
-      <ul>
-        <li><a href="{% url 'rota_home' %}">Início</a></li>
-        <li><a href="{% url 'rota_home' %}">Sobre</a></li>
-        <li><a href="{% url 'rota_home' %}">Serviços</a></li>
-        <li><a href="{% url 'rota_home' %}">Planos</a></li>
-        <li><a href="{% url 'rota_home' %}">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- ===== LOGIN CONTEÚDO ===== -->
-  <section class="login-section">
-    <div class="login-box">
-      <img src="{% static 'images/Logo_Finyou.png' %}" alt="Logo FinYou" class="login-logo" />
-
-      <h2>Bem-vindo de volta!</h2>
-      <p>Entre na sua conta FinYou</p>
-
-      <form class="login-form">
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Senha" required />
-        <button type="submit">Entrar</button>
-
-        <div class="login-links">
-        <p>Não tem uma conta? <a href="{% url "rota_criarConta" %}">Criar conta</a></p>
-        <p>Esqueceu a senha? <a href="{% url "rota_recuperarSenha" %}">Recuperar senha</a></p>
-        </div>
-      </form>
-
-      <div class="login-social">
-        <p>Ou entre com</p>
-        <div class="social-icons">
-          <img src="{% static "images/Logo_Facebook.png" %}" alt="Facebook" />
-          <img src="{% static "images/Logo_Instagram.png" %}" alt="Instagram" />
-          <img src="{% static "images/Logo_LinkedIn.png" %}" alt="LinkedIn" />
-        </div>
+    <div class="login-social">
+      <p>Ou entre com</p>
+      <div class="social-icons">
+        <img src="{% static "images/Logo_Facebook.png" %}" alt="Facebook" />
+        <img src="{% static "images/Logo_Instagram.png" %}" alt="Instagram" />
+        <img src="{% static "images/Logo_LinkedIn.png" %}" alt="LinkedIn" />
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-</body>
-</html>
+{% endblock conteudo %}

@@ -12,4 +12,4 @@ Os seguintes comandos são utilizados dentro dos arquivos HTML para adicionar di
 {{ nome_variavel }}
 
 ### Laços de Repetições
-{% for %}
+{% for ... %} {% end_for %}

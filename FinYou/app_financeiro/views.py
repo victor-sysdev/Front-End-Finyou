@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from django.views import generic
+from django.urls import reverse_lazy
+
 # Criando as Views
 
 def home(request):
@@ -16,7 +19,7 @@ def recuperarSenha(request):
     return render(request, "app_financeiro/recuperacao.html")
 
 def dashboard(request):
-    return HttpResponse("<h1>Dashboard</h1>")
+    return render(request, "teste.html")
 
 def pagamento(request):
     return HttpResponse("<h1>Página de pagamento</h1>")
