@@ -18,10 +18,10 @@
   <!-- ===== HEADER ===== -->
   <header>
     <div class="logo">
-        <img src="{% static "/images/Logo_Finyou" %}" alt="FinYou Logo" />
+        <img src="{% static "/images/Logo_Finyou.png" %}" alt="FinYou Logo" />
         <h1>FinYou</h1>
       </div>
-    <nav class="barra-navegacao">
+    <nav class="nav navbar">
         <ul>
           <li><a href="{% url "rota_login" %}">Login</a></li>
           <li><a href="#inicio">Início</a></li>
@@ -42,9 +42,9 @@
   <footer>
     <p>© 2025 FinYou - Todos os direitos reservados.</p>
     <div class="redes-sociais">
-      <img src="../static/images/Logo_Facebok.png" alt="Facebook">
-      <img src="../static/images/Logo_Instagram.png" alt="Instagram">
-      <img src="../static/images/Logo_linkedin.png" alt="LinkedIn">
+      <img src="{% static "images/Logo_Facebook.png" %}" alt="Facebook">
+      <img src="{% static "images/Logo_Instagram.png" %}" alt="Instagram">
+      <img src="{% static "images/Logo_LinkedIn.png" %}" alt="LinkedIn">
     </div>
   </footer>
 </body>

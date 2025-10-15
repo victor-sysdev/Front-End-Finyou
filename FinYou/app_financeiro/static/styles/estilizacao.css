@@ -24,11 +24,7 @@ body {
 
 
 /* ===== HEADER ===== */
-.barra-navegacao{
 
-  /* configurar */
-
-}
 /* ===== HEADER FIXO ===== */
 header {
   background-color: var(--branco);
@@ -276,6 +272,7 @@ footer {
     font-size: 0.9rem;
   }
 }
+
 /* ===== LOGO + TEXTO ===== */
 .logo {
   display: flex;
@@ -543,6 +540,7 @@ footer {
 .voltar-login a:hover {
   text-decoration: underline;
 }
+
 /* ===== RESPONSIVO RECUPERAR SENHA ===== */
 @media (max-width: 480px) {
   .recuperar-box {
@@ -649,6 +647,7 @@ footer {
 .voltar-login a:hover {
   text-decoration: underline;
 }
+
 /* ===== RESPONSIVO CADASTRO ===== */
 @media (max-width: 480px) {
     .cadastro-box {

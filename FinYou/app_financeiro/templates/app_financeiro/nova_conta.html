@@ -1,36 +1,10 @@
+{% extends "template.html" %}
 {% load static %}
+{% block titulo %}Criar Conta{% endblock titulo %}
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static 'styles/estilizacao.css' %}" />
-  <title>Criar Conta - FinYou</title>
-</head>
-<body>
-
-  <!-- ===== HEADER FIXO ===== -->
-  <header>
-    <div class="logo">
-      <img src="/FinYou/Front-End-Finyou/assets/Logo_Finyou_Sem_Escrita.png" alt="FinYou Logo" />
-      <h1>FinYou</h1>
-    </div>
-
-    <nav>
-      <ul>
-        <li><a href="{% url 'rota_home' %}">Início</a></li>
-        <li><a href="{% url 'rota_home' %}">Sobre</a></li>
-        <li><a href="{% url 'rota_home' %}">Serviços</a></li>
-        <li><a href="{% url 'rota_home' %}">Planos</a></li>
-        <li><a href="{% url 'rota_home' %}">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
-
-
-  <!-- ===== CONTEÚDO DE CADASTRO ===== -->
-  <section class="cadastro-section">
+<!-- ===== CONTEÚDO DE CADASTRO ===== -->
+{% block conteudo %}
+<section class="cadastro-section">
     <div class="cadastro-box">
       <img src="/FinYou/Front-End-Finyou/assets/Logo_Finyou_Sem_Escrita.png" alt="Logo FinYou" class="cadastro-logo" />
 
@@ -46,11 +20,9 @@
       </form>
 
       <p class="voltar-login">
-       <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
-         <!-- <a href="login.html">← Voltar para o login</a> --- IGNORE --- -->
+      <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
+      <a href="{% url "rota_login" %}">← Voltar para o login</a>
       </p>
     </div>
   </section>
-
-</body>
-</html>
+{% endblock conteudo %}
