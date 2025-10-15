@@ -11,12 +11,17 @@
       <h2>Criar nova conta</h2>
       <p>Preencha os campos abaixo para se cadastrar na FinYou.</p>
 
-      <form class="cadastro-form">
+      <form class="cadastro-form" method="POST" action="{% url "rota_criarConta" %}" >
+        {% csrf_token %}
+        {{ Formulario_Criar_Conta }}
+        <input type="submit" value="Enviar">
+        {% comment %}
         <input type="text" placeholder="Nome completo" required />
         <input type="email" placeholder="E-mail" required />
         <input type="password" placeholder="Senha" required />
         <input type="password" placeholder="Confirmar senha" required />
         <button type="submit">Criar conta</button>
+        {% endcomment %}
       </form>
 
       <p class="voltar-login">

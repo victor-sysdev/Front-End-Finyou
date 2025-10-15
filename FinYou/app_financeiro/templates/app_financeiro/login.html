@@ -13,9 +13,13 @@
 
     <form class="login-form" method="POST" action="{% url "rota_login" %}">
       {% csrf_token %}
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Senha" required />
-      <button type="submit">Entrar</button>
+
+      {{ Formulario_Login }}
+
+      {% comment %} <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Senha" required /> 
+      {% endcomment %}
+      <button type="submit" class="botao">Entrar</button>
 
       <div class="login-links">
       <p>Não tem uma conta? <a href="{% url "rota_criarConta" %}">Criar conta</a></p>
