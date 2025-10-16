@@ -6,12 +6,12 @@ from django.urls import reverse_lazy
 #Etapas de configuração de autenticação dos usuários
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 #Importação de arquivos locais
 from .forms import Formulario_Login, Formulario_Criar_Conta
 
 # Criando as Views
-
 def home(request):
     return render(request, "app_financeiro/home.html")
 
@@ -27,13 +27,15 @@ def login(request):
             email = form.cleaned_data["email"] #NÃO UTILIZADA ATÉ O MOMENTO
 
             #Verificando se o usuario existe
-            user = authenticate(username=username, password=password)
-            
-            if user:
-                # auth_login(request, user=user)
-                return HttpResponse(f"Pode fazer login - usuario {user} autenticado")
+            if User.objects.filter(username=username).exists():
+                user = authenticate(username=username, password=password)
+                if user:
+                    auth_login(request, user=user)
+                    return HttpResponse(f"Pode fazer login - O usuario {user} foi autenticado")
+                else:
+                    return HttpResponse(f"Você não foi autenticado")
             else:
-                return redirect()
+                return HttpResponse("O usuário não existe, crie-o")
     
 
 def criarConta(request):
@@ -62,8 +64,9 @@ def criarConta(request):
 def recuperarSenha(request):
     return render(request, "app_financeiro/recuperacao.html")
 
+
 def teste(request):
-    return render(request, "teste.html")
+    return render(request, "app_financeiro/auxilhoFinyou.html")
 
 def pagamento(request):
     return HttpResponse("<h1>Página de pagamento</h1>")
