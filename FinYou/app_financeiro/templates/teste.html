@@ -1,0 +1,10 @@
+{% extends "template.html" %}
+{% load static %}
+{% block titulo %}PAGINA DE TESTE{% endblock titulo %}
+
+{% block conteudo %}
+<div>
+  <button onclick="popup()">Clique-me</button>
+</div>
+{% endblock conteudo %}
+<script src="{% static "/scripts/tradingview.js" %}"></script>

@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagamento - Finyou</title>
+</head>
+
+<body>
+    <!-- ===== HEADER FIXO ===== -->
+    <header>
+        <div class="logo">
+            <img src="../assets/Logo_Finyou.png" alt="FinYou Logo" />
+            <h1>Pagamentos FinYou</h1>
+
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="home.html">Início</a>
+                </li>
+                <li><a href="home.html">Sobre</a></li>
+                <li><a href="home.html">Serviços</a></li>
+                <li><a href="home.html">Planos</a></li>
+                <li><a href="home.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    </div class="pagamentos">
+    <h2>Pagamento</h2>
+    <form action="processar_pagamento.php" method="POST">
+        <label for="nome">Nome no Cartão:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="numero">Número do Cartão:</label>
+        <input type="text" id="numero" name="numero" required><br><br>
+
+        <label for="validade">Validade (MM/AA):</label>
+        <input type="text" id="validade" name="validade" required><br><br>
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required><br><br>
+
+        <button type="submit">Pagar Agora</button><br>
+
+    </form><br>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© 2025 FinYou - Todos os direitos reservados.</p>
+        <div class="redes-sociais">
+            <img src="../assets/Logo_Facebok.png" alt="Facebook">
+            <img src="../assets/Logo_Instagram.png" alt="Instagram">
+            <img src="../assets/Logo_linkedin.png" alt="LinkedIn">
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
