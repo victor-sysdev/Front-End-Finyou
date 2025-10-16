@@ -39,6 +39,11 @@
 
   <!-- ===== PLANOS ===== -->
   <section id="planos">
+
+    {% if user.is_authenticated %}
+    <h1>Seja bem vindo {{ user }}</h1>
+    {% endif %}
+
     <h2>Planos e Preços</h2>
     
     <!--Primeiro Card-->
@@ -47,7 +52,7 @@
         <h3>Básico</h3>
         <p>Ideal para investidores iniciantes no controle financeiro.</p>
         <p><strong>R$19,90/mês</strong></p>
-        <a href="#" class="botao">Assinar</a>
+        <a href="{% url "rota_pagamento" %}" class="botao">Assinar</a>
       </div>
 
     <!--Segundo Card-->
@@ -55,7 +60,7 @@
         <h3>Premium</h3>
         <p>O plano mais completo com suporte 24h e outras funcionalidades.</p>
         <p><strong>R$49,90/mês</strong></p>
-        <a href="#" class="botao">Assinar</a>
+        <a href="{% url "rota_pagamento" %}" class="botao">Assinar</a>
       </div>
 
     <!--Terceiro Card-->
@@ -63,12 +68,13 @@
         <h3>Empresarial</h3>
         <p>Gestão financeira para pequenas e médias empresas.</p>
         <p><strong>R$89,90/mês</strong></p>
-        <a href="#" class="botao">Assinar</a>
+        <a href="{% url "rota_pagamento" %}" class="botao">Assinar</a>
       </div>
     </div>
   </section>
 
   <!-- ===== CONTATO ===== -->
+  <!--IMPLEMENTAR FUNCIONAMENTO-->
   <section id="contato">
     <h2>Fale Conosco</h2>
     <form>

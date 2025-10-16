@@ -14,6 +14,7 @@
             <button id="btn-atualizar">Atualizar Dados</button>
         </section>
 
+    {% autoescape on %}
         <!-- CARDS -->
         <section class="resumo">
             <div class="card receita">
@@ -39,7 +40,9 @@
             <canvas id="graficoReceitas"></canvas>
             <canvas id="graficoDespesas"></canvas>
         </section>
+    {% endautoescape %}
+        
     </main>
 
-    {% endblock conteudo %}
     <script src="{% static "scripts/dashboard.js" %}"></script> 
+    {% endblock conteudo %}
