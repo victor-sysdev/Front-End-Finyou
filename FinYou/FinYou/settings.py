@@ -11,18 +11,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-from decouple import (
-    config,
-    Csv,
-)  # Serve para ler o arquivo .env e carregar nossas variáveis de ambiente
-from dj_database_url import (
-    parse as db_url,
-)  # Serve para interpretar a URL do banco de dados e converter para o formato que o Django entende
-
+from decouple import config,Csv #Serve para ler o arquivo .env e carregar nossas variáveis de ambiente
+from dj_database_url import parse as db_url # Serve para interpretar a URL do banco de dados e converter para o formato que o Django entende
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -34,13 +27,19 @@ SECRET_KEY = config(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DEBUG", cast=bool, default=False)
+DEBUG = config(
+    "DEBUG", 
+    cast=bool, 
+    default=False
+)
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
+ALLOWED_HOSTS = config(
+    "ALLOWED_HOSTS", 
+    cast=Csv()
+)
 
 
 # Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -85,7 +84,6 @@ WSGI_APPLICATION = "FinYou.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 
 DATABASES = {
     "default": config(
@@ -133,3 +131,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Configurações de autenticação

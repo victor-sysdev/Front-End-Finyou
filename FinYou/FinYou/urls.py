@@ -18,7 +18,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
+#Importando as Views de Autenticação
+from django.contrib.auth import views as auth_views
+from django.contrib.auth.forms import AuthenticationForm
+from django import forms
+
+from app_financeiro import urls as app_urls
+from app_financeiro import forms as app_forms
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("app_financeiro.urls")),
+
+    #path("account/", include("django.contrib.auth.urls")),
+    # path("account/login", include("django.contrib.auth.urls")),
+    
 ]

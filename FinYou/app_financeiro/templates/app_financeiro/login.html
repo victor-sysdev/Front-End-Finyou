@@ -13,7 +13,7 @@
 
     <form class="login-form" method="POST" action="{% url "rota_login" %}">
       {% csrf_token %}
-
+      <!--Implementar verificação dos campos e validação dos mesmos em caso de erro-->
       {{ Formulario_Login }}
 
       {% comment %} <input type="email" placeholder="Email" required />

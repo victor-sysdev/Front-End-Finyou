@@ -59,34 +59,39 @@ def login(request):
         )
 
     else:
-        form = Formulario_Login(
-            request.POST
-        )  # Inicializa uma instancia do formulário com base nos dados passados pelo formulario
+        form = Formulario_Login(request.POST)  # Inicializa uma instancia do formulário com base nos dados passados pelo formulario
         if form.is_valid():
             username = form.cleaned_data["username"]
             password = form.cleaned_data["password"]
-            email = form.cleaned_data["email"]  # NÃO UTILIZADA ATÉ O MOMENTO
+            #email = form.cleaned_data["email"]  # NÃO UTILIZADA ATÉ O MOMENTO
 
             # Verificando se o usuario existe
             if User.objects.filter(username=username).exists():
                 user = authenticate(username=username, password=password)
-                if user:
+                if user: #Verifica se o usuário foi autenticado
                     auth_login(request, user=user)
-                    return HttpResponse(
-                        f"Pode fazer login - O usuario {user} foi autenticado"
-                    )
+                    return HttpResponse(f"Pode fazer login - O usuario {user} foi autenticado")
                 else:
                     return HttpResponse(f"Você não foi autenticado")
-            else:
-                return render(request, "rota_hone")
-                #return HttpResponse("O usuário não existe, crie-o")
+        return HttpResponse("O usuário não existe, crie-o\n <a href=/criarConta/>Crie uma conta</a>")
 
 def recuperarSenha(request):
     return render(request, "app_financeiro/recuperacao.html")
 
+#===============================================
+
+def teste(request):
+    #user = User.objects.get(username=username)
+    return render(request, "teste.html", context={"form":Formulario_Criar_Conta()})
+
+#===============================================
+
 @login_required(login_url="rota_login")
 def logout(request):
-    ...
+    username = request.user.username #Pego o username cadastrado atualmente
+    user = User.objects.get(username=username)
+    auth_logout(request)
+    return HttpResponse(f"Usuario {user.username} foi deslogado com sucesso")
 
 @login_required(login_url="rota_login")
 def dashboard(request):

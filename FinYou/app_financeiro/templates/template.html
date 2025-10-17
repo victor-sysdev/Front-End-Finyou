@@ -33,7 +33,7 @@
           <li><a href="#contato">Contato</a></li>
           {% if user.is_authenticated %}
           <li><a href="{% url "rota_dashboard" %}">Dashboard</a></li>
-          <li><a href="">logout</a></li>
+          <li><a href="{% url "rota_logout" %}">logout</a></li>
         {% else %}
           <li><a href="{% url "rota_login" %}">Login</a></li>
         {% endif %}
