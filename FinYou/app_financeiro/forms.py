@@ -5,7 +5,7 @@ class Formulario_Login(forms.Form):
     username = forms.CharField(
         required=True, 
         label="Digite seu username",
-        initial="Marcos",
+        initial="asd",
         widget=forms.TextInput(attrs={'class': 'form-control'})
     )
     # email = forms.EmailField(
@@ -21,7 +21,7 @@ class Formulario_Login(forms.Form):
 class Formulario_Criar_Conta(forms.Form):
     username = forms.CharField(
         required=True, 
-        label="Digite seu username", 
+        label="Digite seu username",
     )
     email = forms.EmailField(
         required=True,

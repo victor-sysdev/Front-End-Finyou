@@ -8,7 +8,7 @@ from django import forms
 
 #Importando os formulários e a url
 from .forms import Formulario_Criar_Conta, Formulario_Login
-from .views import home, login, recuperarSenha, dashboard, pagamento, criarConta, logout, teste
+from .views import home, login, recuperarSenha, dashboard, pagamento, criarConta, logout
 
 
 
@@ -20,7 +20,7 @@ urlpatterns = [
     path("dashboard/", dashboard, name="rota_dashboard"),
     path("pagamento/", pagamento, name="rota_pagamento"),
     path("logout/", logout, name="rota_logout"),
-    path("teste/", teste, name="rota_teste"),
+    #path("teste/", loginTeste.as_view(), name="rota_teste"),
 
     # path("login/", auth_views.LoginView.as_view(
     #     template_name="app_financeiro/login.html",

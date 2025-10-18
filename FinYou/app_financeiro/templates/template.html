@@ -24,23 +24,34 @@
     </div>
 
       <!--VERIFICAR SE O USUÁRIO ESTÁ CADASTRADO-->
-    <nav class="nav navbar">
+      <nav class="nav navbar">
         <ul>
+          {% if user.is_authenticated %}
           <li><a href="{% url 'rota_home' %}">Início</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#planos">Planos</a></li>
           <li><a href="#contato">Contato</a></li>
-          {% if user.is_authenticated %}
           <li><a href="{% url "rota_dashboard" %}">Dashboard</a></li>
           <li><a href="{% url "rota_logout" %}">logout</a></li>
-        {% else %}
+          <li>
+            <a> seja bem vindo, {{ user.username }}! </a>
+          </li>
+          {% else %}
+          <li><a href="{% url 'rota_home' %}">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#planos">Planos</a></li>
+          <li><a href="#contato">Contato</a></li>
           <li><a href="{% url "rota_login" %}">Login</a></li>
-        {% endif %}
+          <li>
+            <p> Que tal se cadastrar </p>
+          </li>
+          {% endif %}
         </ul>
       </nav>
-  </header> 
-
+    </header> 
+    
 <!-- ===== Conteúdo carregado dinamicamente ===== -->
 {% block conteudo %}
 
